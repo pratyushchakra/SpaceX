@@ -1,12 +1,3 @@
 {
-  "presets": [
-    [
-      "./jest/preset",
-      {
-        "styled-jsx": {
-          "plugins": ["styled-jsx-plugin-postcss"]
-        }
-      }
-    ]
-  ]
+  "presets": ["next/babel"]
 }

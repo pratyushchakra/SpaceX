@@ -16,11 +16,20 @@ const Pod = ({ launch }) => (
         <style jsx>{styles}</style>
     </div>
 )
-const Pods = ({ store: { launchConfig: { allLaunches, setLaunchData }, filterConfig: { filterData } } }) => {
+const Pods = ({ store }) => {
+    if (!store) return null;
+
+    const { launchConfig, filterConfig } = store;
+
+
+    const { allLaunches, setLaunchData } = launchConfig;
+    const { filterData } = filterConfig;
     useEffect(() => {
         if (!filterData || Object.entries(filterData).length === 0) return
         fetchPodsData(filterData, setLaunchData);
-    }, [filterData])
+    }, [filterData]);
+
+
     return (
         <Fragment>
             {
@@ -33,4 +42,5 @@ const Pods = ({ store: { launchConfig: { allLaunches, setLaunchData }, filterCon
     )
 }
 
+export { Pods };
 export default withContext(Pods);

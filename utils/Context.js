@@ -19,7 +19,9 @@ const formatData = (allLaunchesData = []) => {
 
 function useUserContext({ data: initialData }) {
   const [allLaunchesData, setLaunchData] = useState(initialData);
-  const [filterData, setFilterData] = useState({});
+  const [filterData, setFilterData] = useState({
+    launch: null, landing: null, year: ''
+  });
   return {
     launchConfig: {
       allLaunches: [

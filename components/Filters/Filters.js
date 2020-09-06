@@ -2,15 +2,11 @@ import { Fragment } from "react";
 
 import { withContext } from '../../utils/Context';
 import { generateYears } from "../../utils/utils";
-import style from './Filter.style'
+import style from './Filter.style';
+
 const Filters = ({ store }) => {
     const { filterConfig: { filterData, setFilterData } } = store;
-    const isLaunchAndLandSelected = () => {
-        const { launch, landing } = filterData;
-        const isLaunchSelected = typeof launch === 'boolean';
-        const isLandingSelected = typeof landing === 'boolean';
-        return isLaunchSelected && isLandingSelected;
-    }
+
     const changeFilterConfig = (label, value) => () => {
         let tempValue = value;
         const { launch, landing } = filterData;
@@ -28,6 +24,7 @@ const Filters = ({ store }) => {
         }
         config[label] = tempValue;
         setFilterData(config)
+        console.log('config: ', config);
     }
     return (
         <Fragment>
@@ -42,6 +39,7 @@ const Filters = ({ store }) => {
                                 key={y}
                                 className="button-wrapper">
                                 <button
+                                    id={`year-btn-${y}`}
                                     className={filterData['year'] === y ? 'selected' : ''}
                                     onClick={changeFilterConfig('year', y)}
                                 >{y}</button>
@@ -87,4 +85,5 @@ const Filters = ({ store }) => {
     )
 };
 
+export { Filters }
 export default withContext(Filters)
