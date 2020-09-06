@@ -9,7 +9,9 @@
     "test": "jest",
     "eject": "react-scripts eject",
     "start": "next start",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "export": "next export",
+    "deploy": "npm run build && npm run export"
   },
   "keywords": [],
   "author": "",
