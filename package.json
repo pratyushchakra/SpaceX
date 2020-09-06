@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "react-scripts build",
+    "build": "next build",
     "test": "jest",
     "eject": "react-scripts eject",
-    "start": "next start -p $port",
+    "start": "next start -p",
     "heroku-postbuild": "npm run build"
   },
   "keywords": [],
