@@ -86,7 +86,7 @@ const Filters = ({ store }) => {
     )
 };
 
-Pods.propTypes = {
+Filters.propTypes = {
     store: PropTypes.object.isRequired
 }
 export { Filters }

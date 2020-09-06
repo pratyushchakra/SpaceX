@@ -4,20 +4,20 @@ import { Pods } from '../Pods';
 import mock from '../../../utils/mock';
 Enzyme.configure({ adapter: new Adapter() });
 
-let store
-beforeEach(() => {
-    store = {
-        "launchConfig": {
-            "allLaunches": mock,
-            "setLaunchData": jest.fn()
-        },
-        "filterConfig": {
-            "filterData": {},
-            "setFilterData": jest.fn()
-        }
-    }
-})
 describe('Pods Component', () => {
+    let store
+    beforeEach(() => {
+        store = {
+            "launchConfig": {
+                "allLaunches": mock,
+                "setLaunchData": jest.fn()
+            },
+            "filterConfig": {
+                "filterData": {},
+                "setFilterData": jest.fn()
+            }
+        }
+    })
     it('renders Pods component with proper data', () => {
         const wrapper = shallow(
             <Pods store={store} />

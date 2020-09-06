@@ -8,7 +8,7 @@
     "build": "next build",
     "test": "jest",
     "eject": "react-scripts eject",
-    "start": "next start -p",
+    "start": "next start -p $port",
     "heroku-postbuild": "npm run build"
   },
   "keywords": [],
