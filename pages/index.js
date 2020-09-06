@@ -20,10 +20,7 @@ SpaceXProgram.getInitialProps = async () => {
     }
 }
 
-SpaceXProgram.defaultProps = {
-    allLaunches: []
-}
 SpaceXProgram.propTypes = {
-    allLaunches: PropTypes.array
+    allLaunches: PropTypes.array.isRequired
 }
 export default SpaceXProgram;

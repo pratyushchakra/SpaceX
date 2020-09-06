@@ -1,5 +1,7 @@
 import { withContext } from '../../utils/Context';
 import { Fragment, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 import styles from './Pods.style'
 import { fetchPodsData } from '../../utils/utils';
 
@@ -41,6 +43,8 @@ const Pods = ({ store }) => {
         </Fragment>
     )
 }
-
+Pods.propTypes = {
+    store: PropTypes.object.isRequired
+}
 export { Pods };
 export default withContext(Pods);

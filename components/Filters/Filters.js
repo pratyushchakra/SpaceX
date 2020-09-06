@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import PropTypes from 'prop-types';
 
 import { withContext } from '../../utils/Context';
 import { generateYears } from "../../utils/utils";
@@ -85,5 +86,8 @@ const Filters = ({ store }) => {
     )
 };
 
+Pods.propTypes = {
+    store: PropTypes.object.isRequired
+}
 export { Filters }
 export default withContext(Filters)
