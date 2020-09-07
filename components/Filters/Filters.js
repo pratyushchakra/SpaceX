@@ -19,13 +19,9 @@ const Filters = ({ store }) => {
         if (filterData[label] === value) {
             tempValue = null;
         }
-        if (label === 'year' && value && !isLaunchSelected && !isLandingSelected) {
-            config.launch = true;
-            config.landing = true;
-        }
+
         config[label] = tempValue;
         setFilterData(config)
-        console.log('config: ', config);
     }
     return (
         <Fragment>

@@ -16,5 +16,8 @@ export default {
     },
     GET_YEAR_AND_LAND_DATA: (year, landing = true) => {
         return `https://api.spaceXdata.com/v3/launches?limit=100&land_success=${landing}&launch_year=${year}`
-    }
+    },
+    GET_ONLY_YEAR_DATA: (year) => {
+        return `https://api.spaceXdata.com/v3/launches?limit=100&launch_year=${year}`
+    },
 } 

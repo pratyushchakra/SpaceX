@@ -3,7 +3,7 @@ import apiConfig from "./apiConfig";
 import Axios from "axios";
 
 const generateYears = () => {
-    let y = 2007
+    let y = 2005
     const arr = Array.from(Array(15)).map(v => {
         return ++y;
     })
@@ -25,6 +25,8 @@ const fetchPodsData = async (filters, callback) => {
         url = apiConfig.GET_YEAR_AND_LAUNCH_DATA(year, launch)
     } else if (year && !isLaunchSelected && isLandingSelected) {
         url = apiConfig.GET_YEAR_AND_LAND_DATA(year, landing)
+    } else if (year && !isLaunchSelected && !isLandingSelected) {
+        url = apiConfig.GET_ONLY_YEAR_DATA(year, launch, landing)
     } else {
         url = apiConfig.GET_ALL_FILTERS_DATA(year, launch, landing)
     }
